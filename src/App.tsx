@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Scoreboard} from './scoreBoard/Scoreboard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export type AppPropsType = {
+    startValue: number
+    maxValue: number
+}
+
+const App: React.FC<AppPropsType> = ({startValue, maxValue}) => {
+
+    let [count, setCount] = useState<number>(startValue)
+
+    const Increment = () => {
+        if (count < maxValue) {
+            setCount(count + 1)
+        }
+    }
+
+    const Decrement = () => {
+        if (count < maxValue) {
+            setCount(count - 1)
+        }
+    }
+
+    const Reset = () => {
+        setCount(startValue)
+    }
+
+    return (
+        <>
+            <Scoreboard value={count}
+                        Inc={Increment}
+                        Dec={Decrement}
+                        Reset={Reset}
+                        startValue={startValue}
+                        maxValue={maxValue}
+            />
+        </>
+    );
 }
 
 export default App;

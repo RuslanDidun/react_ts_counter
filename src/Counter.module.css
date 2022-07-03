@@ -1,0 +1,11 @@
+.classicText{
+    color: black;
+    font-size: 120px;
+    text-align: center;
+}
+.redText{
+    color: red;
+    font-size: 120px;
+    text-align: center;
+    transition: 0.6s;
+}

@@ -1,0 +1,36 @@
+.button {
+    display: inline-block;
+    font-size: 25px;
+    width: 100px;
+    height: 45px;
+    border: 3px solid rgba(42, 99, 143, 1);
+    border-radius: 15px;
+    background: rgba(42, 99, 143, 0.25);
+    margin: 10px 7.5px 10px 7.5px;
+    transition: 0.2s;
+    box-shadow: 0 2px 5px black;
+
+}
+
+.button:hover {
+    background: rgba(42, 99, 143, 0.5);
+}
+
+.button:active {
+    box-shadow: 0 0 0 black;
+    background: rgba(42, 99, 143, 0.75);
+    transform: translateY(1.5px);
+}
+
+.button:disabled {
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    color: black;
+    border: 3px solid #2a638f;
+    border-radius: 15px;
+    margin: 10px 7.5px 10px 7.5px;
+    box-shadow: 0 0 0 black;
+    background: rgba(42, 99, 143, 0.75);
+    transform: translateY(1.5px);
+}
